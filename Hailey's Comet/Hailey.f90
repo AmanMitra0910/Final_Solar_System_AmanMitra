@@ -108,9 +108,9 @@ module PlanetModule
     
         radius = semi_major_axis * (1.0 - eccentricity**2) / &
                  (1.0 + eccentricity * cos(true_anomaly))
-        planet%position(1) = radius * cos(true_anomaly)
-        planet%position(2) = (radius * sin(true_anomaly)) * cos(incline)
-        planet%position(3) = (radius * sin(true_anomaly)) * sin(incline)
+        planet%position(1) = (radius * cos(true_anomaly)) * cos(incline)
+        planet%position(2) = (radius * sin(true_anomaly)) 
+        planet%position(3) = (radius * cos(true_anomaly)) * sin(incline)
     end subroutine update_position    
 
 end module PlanetModule
